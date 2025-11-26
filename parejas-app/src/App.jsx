@@ -22,7 +22,7 @@ return (
 </nav>
 </header>
 <main className="p-4">
-{route==='home' && <Home />}
+{route === 'home' && <Home go={setRoute} />}
 {route==='parejas' && <Parejas />}
 {route==='creator' && <Creator />}
 {route==='ranking' && <Ranking />}
