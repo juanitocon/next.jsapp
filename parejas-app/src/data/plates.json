@@ -1,0 +1,6 @@
+[
+{"id":"arepa","name":"Arepa","image":"/images/arepa.jpg","desc":"Arepa colombiana"},
+{"id":"empanada","name":"Empanada","image":"/images/empanada.jpg","desc":"Empanada de carne"},
+{"id":"ajiaco","name":"Ajiaco","image":"/images/ajiaco.jpg","desc":"Ajiaco santafereño"},
+{"id":"sancocho","name":"Sancocho","image":"/images/sancocho.jpg","desc":"Sancocho tradicional"}
+]

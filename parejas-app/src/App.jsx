@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import Home from './components/Home'
+import Parejas from './components/Parejas'
+import Creator from './components/Creator'
+import Ranking from './components/Ranking'
+import Gallery from './components/Gallery'
+import ObjetoSanAgustin from './components/ObjetoSanAgustin'
+import Info from './components/Info'
+import Settings from './components/Settings'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App(){
+const [route, setRoute] = useState('home')
+return (
+<div className="min-h-screen bg-gray-50">
+<header className="p-4 shadow-md bg-white flex justify-between items-center">
+<h1 className="text-xl font-bold">Parejas: Comidas Colombianas</h1>
+<nav className="space-x-2">
+{['home','parejas','creator','ranking','gallery','objeto','info','settings'].map(r=> (
+<button key={r} onClick={()=>setRoute(r)} className="px-2 py-1 rounded hover:bg-gray-100">{r}</button>
+))}
+</nav>
+</header>
+<main className="p-4">
+{route==='home' && <Home />}
+{route==='parejas' && <Parejas />}
+{route==='creator' && <Creator />}
+{route==='ranking' && <Ranking />}
+{route==='gallery' && <Gallery />}
+{route==='objeto' && <ObjetoSanAgustin />}
+{route==='info' && <Info />}
+{route==='settings' && <Settings />}
+</main>
+</div>
+)
 }
-
-export default App
